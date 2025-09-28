@@ -223,10 +223,15 @@
 
                 <!-- RIGHT: Image Gallery -->
                 <div class="gallery" data-gallery="dunzo">
-                    <div class="main">
+                    <div class="main swipe-area">
+                        <button class="arrow prev" onclick="swipeImage(this, -1)" aria-label="Previous">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                        </button>
                         <img src="https://developrabhishek.github.io/assets/img/portfolio/dunzo/dunzo-1.jpg"
                              alt="Dunzo screen 1">
-                    </div>
+                        <button class="arrow next" onclick="swipeImage(this, 1)" aria-label="Next">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>                    </div>
                     <div class="dots">
                         <div class="dot active" onclick="changeGalleryImage('dunzo', 0)"></div>
                         <div class="dot" onclick="changeGalleryImage('dunzo', 1)"></div>
@@ -272,9 +277,15 @@
 
                 <!-- RIGHT: Image Gallery -->
                 <div class="gallery" data-gallery="redbus">
-                    <div class="main">
+                    <div class="main swipe-area">
+                        <button class="arrow prev" onclick="swipeImage(this, -1)" aria-label="Previous">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                        </button>
                         <img src="https://developrabhishek.github.io/assets/img/portfolio/red-bus/redbus-1.jpg"
                              alt="Red Bus screen 1">
+                        <button class="arrow next" onclick="swipeImage(this, 1)" aria-label="Next">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                        </button>
                     </div>
                     <div class="dots">
                         <div class="dot active" onclick="changeGalleryImage('redbus', 0)"></div>
