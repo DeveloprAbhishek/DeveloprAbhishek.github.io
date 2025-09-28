@@ -367,3 +367,54 @@ footer {
   font-size: 13px;
   color: var(--muted)
 }
+
+
+/* =========================
+   Responsive tweaks
+   ========================= */
+
+/* Large tablets / small laptops */
+@media (max-width: 1200px){
+  .wrap{ max-width: 1000px;padding-left: 20px;padding-right: 20px; }
+}
+
+/* Tablets */
+@media (max-width: 900px){
+  .wrap {padding-left: 20px;padding-right: 20px;}
+  /* About card: stack columns */
+  #about .card{ grid-template-columns: 1fr !important; }
+  #about{ padding: 64px 0 20px; }
+  .about-right h1{ font-size: 32px; }
+
+  /* Projects: stack and let image box size nicely */
+  .project-card{ grid-template-columns: 1fr; }
+  .gallery{ order: 2; }                 /* keep image under text on tablets */
+  .gallery .main{ height: 280px; }      /* pleasant fixed box for screenshots */
+}
+
+/* Large phones */
+@media (max-width: 700px){
+  .wrap {padding-left: 20px;padding-right: 20px;}
+  .nav{ height: 56px; }
+  .nav .links{
+    gap: 10px;
+    font-size: 14px;
+    overflow-x: auto;                    /* avoid wrapping; allow horizontal scroll */
+    -webkit-overflow-scrolling: touch;
+  }
+  section{ scroll-margin-top: 72px; }
+
+  .p-bullets{ font-size: 13px; }
+  .tl-item{ padding-left: 42px; }
+  .timeline:before{ left: 18px; }
+  .tl-dot{ left: 12px; }
+}
+
+/* Phones */
+@media (max-width: 480px){
+  .wrap { padding-left: 14px; padding-right: 14px; }
+  .about-right h1{ font-size: 26px; }
+  .gallery .main{ height: 220px; }
+  .gallery .main img{ width: 150px; }    /* you asked for tighter portrait width on small screens */
+  .chip{ padding: 5px 9px; font-size: 11px; }
+}
