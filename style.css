@@ -368,6 +368,37 @@ footer {
   color: var(--muted)
 }
 
+/* Buttons inside image area */
+.swipe-area {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  color: black;
+  border: 1px solid var(--border);
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  transition: all 0.2s ease;
+}
+
+.arrow.prev { left: 8px; }
+.arrow.next { right: 8px; }
+
+.arrow:hover {
+  background: var(--accent);
+  color: white;
+}
 
 /* =========================
    Responsive tweaks

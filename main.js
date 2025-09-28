@@ -56,3 +56,36 @@ function changeGalleryImage(project, index) {
     dot.classList.toggle("active", i === index);
   });
 }
+
+// Swipe image functionality
+function swipeImage(button, direction) {
+  const gallery = button.closest('.gallery');
+  const project = gallery.dataset.gallery;
+  const images = projectImages[project];
+  const mainImg = gallery.querySelector('.main img');
+  const dots = gallery.querySelectorAll('.dot');
+
+  let currentIndex = images.findIndex(url => mainImg.src.includes(url));
+  let nextIndex = (currentIndex + direction + images.length) % images.length;
+
+  changeGalleryImage(project, nextIndex);
+}
+
+// Swipe gesture support
+let touchStartX = 0;
+
+document.querySelectorAll('.gallery .main').forEach(main => {
+  main.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+  });
+
+  main.addEventListener('touchend', e => {
+    let deltaX = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(deltaX) > 50) {
+      const gallery = main.closest('.gallery');
+      const direction = deltaX > 0 ? -1 : 1;
+      const btn = main.querySelector(direction === -1 ? '.arrow.prev' : '.arrow.next');
+      swipeImage(btn, direction);
+    }
+  });
+});
